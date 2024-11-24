@@ -1,0 +1,60 @@
+/* app/components/Header/Header.module.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/*
+***********************************
+Room ID 
+***********************************
+*/
+
+.right_content {
+  display: flex;
+  gap: 2rem;
+  font-size: 12px;
+}
+
+.Room_Id_Container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Room_Id_Label{
+}
+
+.Room_Id {
+}
+
+.Room_Id_Value {
+  /* font-size: 10px; */
+  font-weight: 100;
+  cursor: pointer;
+  /* text-decoration: underline; */
+}
+
+.icon_container{
+  padding: 4px 6px;
+  border-radius: 100rem;
+}
+
+.icon_container:hover{
+  background: #dadada;
+}
+
+.iconCopy {
+    font-size: 12px;
+  cursor: pointer;
+  color: #303030;
+}

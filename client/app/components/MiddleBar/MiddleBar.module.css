@@ -1,0 +1,13 @@
+.MiddleBar_Container {
+  color: #000;
+  height: 92vh;
+  width: 60vw;
+  background: #f1f1f1;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.middlebar_heading{
+    padding: 1rem;
+    text-align: center;
+}

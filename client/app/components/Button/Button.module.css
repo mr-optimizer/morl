@@ -1,0 +1,21 @@
+/* app/components/LeaveRoomButton/LeaveRoomButton.module.css */
+.button {
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    /* transition: all .3s ; */
+  }
+  
+  .button:active {
+    transform: scaleX(0.98);
+  }
+  

@@ -1,0 +1,17 @@
+.LeftBar_Container {
+  height: 92vh;
+  width: 20vw;
+  background: rgb(241, 241, 241);
+  color: #000;
+  border-radius: 6px;
+}
+
+.leftbar_heading {
+  margin: 1rem;
+  text-align: center;
+
+}
+
+.item_list:first-child {
+  border-top: 1px solid #949494;
+}

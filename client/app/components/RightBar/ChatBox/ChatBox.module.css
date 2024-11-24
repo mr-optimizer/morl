@@ -1,0 +1,68 @@
+.ChatBox_Container {
+  /* background: #00f; */
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.chatBox {
+  flex-grow: 1;
+  padding: 5px;
+  min-height: 425px;
+  height: 73vh;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.chatBox::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent; /* Transparent scrollbar track */
+}
+
+.chatBox::-webkit-scrollbar-track {
+  background: transparent; /* Make the track completely transparent */
+}
+
+.chatBox::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8; /* Visible scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.chatBox::-webkit-scrollbar-thumb:hover {
+  background-color: #969696; /* Darker thumb on hover */
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inputContainer {
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 10px;
+  /* background-color: #fff; */
+  /* border-top: 1px solid #ddd; */
+}
+
+.messageInput {
+  flex-grow: 1;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+}

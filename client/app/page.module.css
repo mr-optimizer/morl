@@ -1,0 +1,6 @@
+.page_three_bars{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
