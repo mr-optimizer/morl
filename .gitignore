@@ -1,0 +1,36 @@
+# Go binary files
+*.exe
+*.exe~
+*.out
+*.test
+
+# Build directories
+bin/
+build/
+
+# Dependency directories
+vendor/
+
+# Go workspace
+GOPATH/
+
+# Go modules
+# go.sum
+# go.mod
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+# *.log
+
+# Test coverage files
+*.coverprofile
+
+# Temporary files
+*.tmp

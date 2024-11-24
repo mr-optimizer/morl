@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    environment:
+      - SERVICES=sqs          # Only start the SQS service
+      - DEFAULT_REGION=us-east-1
+    ports:
+      - "4566:4566"           # LocalStack edge port (used for all services)
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"  # Mount Docker socket for LocalStack to run containers
+    networks:
+      - morl-network          # Connect to the existing network
+
+networks:
+  morl-network:
+    external: true            # Indicates this is an existing network

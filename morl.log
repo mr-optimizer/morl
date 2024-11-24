@@ -1,0 +1,4 @@
+time="2024-11-24 09:08:50" level=info msg="Logger initialized and writing to file morl.log" file=logger.go function=InitLogger line=36
+time="2024-11-24 09:08:50" level=info msg="Starting Morl server on port 8080..." file=main.go function=main line=33
+time="2024-11-24 09:08:53" level=info msg="HomeHandler: Received a request for the home page" file=home.go function=HomeHandler line=10
+time="2024-11-24 09:09:12" level=info msg="HomeHandler: Received a request for the home page" file=home.go function=HomeHandler line=10

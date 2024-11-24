@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management  # RabbitMQ with management console
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest  # Default username
+      - RABBITMQ_DEFAULT_PASS=guest  # Default password
+    ports:
+      - "5672:5672"        # RabbitMQ messaging port
+      - "15672:15672"      # Management console port
+    networks:
+      - morl-network       # Connect to the existing network
+
+networks:
+  morl-network:
+    external: true          # Indicates this is an existing network
