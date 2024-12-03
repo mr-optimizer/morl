@@ -40,10 +40,10 @@ func main() {
 
 	// Start the server in a goroutine to allow graceful shutdown
 	go func() {
-		log.Info("Starting Morl server on port 8080...")
-		fmt.Println("Starting Morl server on port 8080...")
+		log.Info("Starting Morl server on port 4000...")
+		fmt.Println("Starting Morl server on port 4000...")
 
-		if err := http.ListenAndServe(":8080", router); err != nil {
+		if err := http.ListenAndServe(":4000", router); err != nil {
 			log.Errorf("Failed to start server: %v", err)
 		}
 	}()

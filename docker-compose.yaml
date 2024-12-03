@@ -1,0 +1,60 @@
+version: "3.2"
+services:
+  # Backend service - multiple instances of the backend
+  backend_1:
+    build:
+      context: ./
+    container_name: morl_backend_1
+    restart: always
+    environment:
+      - SERVICE_NAME=backend
+      - SERVER_ID=server_1
+    expose:
+      - "4000"
+    networks:
+      - morl_network
+
+  backend_2:
+    build:
+      context: ./
+    container_name: morl_backend_2
+    restart: always
+    environment:
+      - SERVICE_NAME=backend
+      - SERVER_ID=server_2
+    expose:
+      - "4000"
+    networks:
+      - morl_network
+
+  backend_3:
+    build:
+      context: ./
+    container_name: morl_backend_3
+    restart: always
+    environment:
+      - SERVICE_NAME=backend
+      - SERVER_ID=server_3
+    expose:
+      - "4000"
+    networks:
+      - morl_network
+
+  # NGINX service - used as a reverse proxy and load balancer
+  nginx:
+    image: nginx:latest
+    container_name: morl_nginx
+    ports:
+      - "5802:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - morl_network
+    depends_on:
+      - backend_1
+      - backend_2
+      - backend_3
+
+networks:
+  morl_network:
+    driver: bridge

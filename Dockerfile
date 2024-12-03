@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go build -o server ./cmd/server/main.go
+RUN go build -o server ./main.go
 
 # Stage 2: Create a lightweight runtime image
 FROM ubuntu:22.04
@@ -31,10 +31,10 @@ WORKDIR /app
 COPY --from=builder /app/server .
 
 # Copy configuration files
-COPY configs ./configs
+COPY config ./configs
 
 # Expose the port your application listens on
-EXPOSE 8080
+EXPOSE 4000
 
 # Set the entry point for the container
 CMD ["./server"]

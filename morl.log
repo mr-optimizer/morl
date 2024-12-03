@@ -1,8 +1,0 @@
-time="2024-11-25 03:29:23" level=info msg="Logger initialized and writing to file morl.log" file=logger.go function=InitLogger line=36
-time="2024-11-25 03:29:23" level=info msg="Successfully connected to Redis" file=redis.go function=InitRedis line=30
-time="2024-11-25 03:29:23" level=info msg="Starting Morl server on port 8080..." file=main.go function=func1 line=43
-time="2024-11-25 03:29:30" level=info msg="HomeHandler: Received a request for the home page" file=home.go function=HomeHandler line=11
-time="2024-11-25 03:29:30" level=info msg="Value:value" file=home.go function=HomeHandler line=21
-time="2024-11-25 03:29:36" level=info msg="Shutting down Morl application..." file=main.go function=main line=53
-time="2024-11-25 03:29:36" level=info msg="Redis connection closed" file=redis.go function=CloseRedis line=41
-time="2024-11-25 03:29:36" level=info msg="Morl application gracefully stopped." file=main.go function=main line=58
