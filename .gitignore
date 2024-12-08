@@ -34,3 +34,9 @@ Thumbs.db
 
 # Temporary files
 *.tmp
+
+#build/images
+morl
+
+#storage path for docker bind
+/internal/db/postgres/replica

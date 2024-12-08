@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	// "context"
 
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
@@ -13,6 +14,8 @@ import (
 	"github.com/mr-optimizer/morl/internal/handlers"
 	"github.com/mr-optimizer/morl/internal/utils"
 	"github.com/mr-optimizer/morl/internal/db/redis"
+	"github.com/mr-optimizer/morl/internal/db/mongo"
+	"github.com/mr-optimizer/morl/internal/db/postgres"
 )
 
 func InitializeRouter() *mux.Router {
@@ -31,6 +34,12 @@ func InitializeRouter() *mux.Router {
 func main() {
 	utils.InitLogger()
 	redis.InitRedis("localhost:6379", "", 0)
+	mongo.ConnectToMongo()
+	// Connect to PostgreSQL Primary
+	postgres.ConnectToPrimary()
+
+	// Connect to PostgreSQL Replica
+	postgres.ConnectToReplica()
 
 	// Set up a channel to listen for OS signals
 	stop := make(chan os.Signal, 1)
@@ -38,6 +47,15 @@ func main() {
 
 	router := InitializeRouter()
 
+
+	defer func() {
+        // if err := mongo.GetMongoClient().Disconnect(context.Background()); err != nil {
+        //     log.Fatalf("Error disconnecting from MongoDB: %v", err)
+        // }
+		postgres.ClosePrimary()
+		postgres.CloseReplica()
+		redis.CloseRedis()
+    }()
 	// Start the server in a goroutine to allow graceful shutdown
 	go func() {
 		log.Info("Starting Morl server on port 4000...")
